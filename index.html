@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rudra — Frontend Developer · UI/UX Designer · Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<nav>
+  <div class="brand"><span class="brand-mark"></span> RUDRA.DEV</div>
+  <ul class="nav-links">
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Say hello <span>→</span></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="orbit-field" id="orbitField">
+    <div class="ring ring--3"></div>
+    <div class="ring ring--2"></div>
+    <div class="ring ring--1"></div>
+
+    <div class="ring-spin ring-spin--1">
+      <div class="orbit-node" style="top:0%;"><span class="dot dot--dev"></span><span>DEV</span></div>
+    </div>
+    <div class="ring-spin ring-spin--2">
+      <div class="orbit-node" style="top:0%;"><span class="dot dot--design"></span><span>DESIGN</span></div>
+    </div>
+    <div class="ring-spin ring-spin--3">
+      <div class="orbit-node" style="top:0%;"><span class="dot dot--product"></span><span>PRODUCT</span></div>
+    </div>
+
+    <div class="hero-core">
+      <div class="eyebrow">Final-year CSE · Chandigarh University <span>·</span> Open to internships</div>
+      <h1 class="hero-name">RUDRA</h1>
+      <div class="hero-roles">
+        <span class="role-chip"><span class="dot dot--dev"></span>Frontend Developer</span>
+        <span class="role-chip"><span class="dot dot--design"></span>UI/UX Designer</span>
+        <span class="role-chip"><span class="dot dot--product"></span>Product Manager</span>
+      </div>
+      <p class="hero-sub">Building interfaces that think like products — shipping code, shaping flows, and writing the spec in between.</p>
+      <form class="hero-bar" id="heroForm">
+        <input type="email" placeholder="Hiring for PM or frontend? Drop your email" required>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="shard" id="shard1" style="top:16%; left:8%; width:150px;">
+    <div class="shard-label">study-flow.netlify.app</div>
+  </div>
+  <div class="shard" id="shard2" style="top:24%; right:6%; width:150px;">
+    <div class="shard-label">cypherthon — 1st place</div>
+  </div>
+  <div class="shard" id="shard3" style="bottom:14%; left:10%; width:170px;">
+    <div class="shard-label">driveflow — case study</div>
+  </div>
+  <div class="shard" id="shard4" style="bottom:18%; right:9%; width:150px;">
+    <div class="shard-label">react · vite · figma</div>
+  </div>
+
+  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section id="intro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">01 <span>/</span> Intro</div>
+        <h2 class="section-title">Who's building<br>this thing</h2>
+      </div>
+      <p class="section-note">A CSE student who treats the browser as a design tool and the roadmap as a first draft — not two separate jobs.</p>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-portrait reveal">
+        <div class="intro-portrait-tag">Chandigarh, IN</div>
+        <div class="intro-portrait-mark">R.</div>
+      </div>
+      <div class="intro-body reveal">
+        <p>I'm <strong>Rudra</strong>, a final-year Computer Science Engineering student who splits time between the code editor and the whiteboard. My focus sits at the intersection of <strong>frontend development</strong> and <strong>product thinking</strong> — I like being the person who can prototype the idea, argue for why it matters, and then actually ship it.</p>
+        <p>That combination has taken shape through projects like <strong>Study Flow</strong>, a React and Vite productivity dashboard I designed and deployed end-to-end, and through product-management work like <strong>DriveFlow</strong>, a CRM case study built around lead management, kanban workflows, and automation design.</p>
+        <p>Most recently I've been going deep on <strong>agentic AI</strong> — RAG, tool-use loops, multi-agent systems — with an eye toward where product management, design systems, and AI-native interfaces are heading next.</p>
+        <div class="intro-stats">
+          <div>
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Shipped Projects</div>
+          </div>
+          <div>
+            <div class="stat-num">1st</div>
+            <div class="stat-label">Cypherthon Win</div>
+          </div>
+          <div>
+            <div class="stat-num">2026</div>
+            <div class="stat-label">Graduating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">02 <span>/</span> Projects</div>
+        <h2 class="section-title">Selected work</h2>
+      </div>
+      <p class="section-note">Five projects spanning frontend builds, IoT prototyping, AI tooling, and product design case studies.</p>
+    </div>
+
+    <div class="project-list">
+
+      <a class="project-card reveal" href="project-study-flow.html">
+        <div class="project-index">01</div>
+        <div class="project-main">
+          <h3>Study Flow<span class="tag" style="border-color:var(--dev);color:var(--dev);">Live</span></h3>
+          <p>A student productivity dashboard built with React and Vite — task tracking, focus timers, and progress views, deployed on Netlify.</p>
+          <div class="tag-row"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Netlify</span></div>
+          <div class="view-link">View case study <span>→</span></div>
+        </div>
+        <div class="project-visual" data-tilt style="--bar-color:var(--dev);">
+          <div class="glow" style="background:var(--dev);"></div>
+          <div class="chrome"><i></i><i></i><i></i></div>
+          <div class="plot">
+            <b style="height:40%;"></b><b style="height:70%;"></b><b style="height:55%;"></b><b style="height:90%;"></b><b style="height:35%;"></b><b style="height:65%;"></b>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="project-driveflow.html">
+        <div class="project-index">02</div>
+        <div class="project-main">
+          <h3>DriveFlow CRM<span class="tag" style="border-color:var(--product);color:var(--product);">Case Study</span></h3>
+          <p>A lead-management CRM designed for a fictional auto dealership — lead listing, lead detail, kanban pipeline, and a business-manager dashboard, with three automations mapped end-to-end.</p>
+          <div class="tag-row"><span class="tag">Product Design</span><span class="tag">Automation Flows</span><span class="tag">Dashboards</span></div>
+          <div class="view-link">View case study <span>→</span></div>
+        </div>
+        <div class="project-visual" data-tilt style="--bar-color:var(--product);">
+          <div class="glow" style="background:var(--product);"></div>
+          <div class="chrome"><i></i><i></i><i></i></div>
+          <div class="plot">
+            <b style="height:60%;"></b><b style="height:30%;"></b><b style="height:80%;"></b><b style="height:45%;"></b><b style="height:95%;"></b><b style="height:50%;"></b>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="project-driver-fatigue.html">
+        <div class="project-index">03</div>
+        <div class="project-main">
+          <h3>Driver Fatigue Detection<span class="tag" style="border-color:var(--design);color:var(--design);">IoT</span></h3>
+          <p>An IoT prototype that detects driver fatigue in real time and raises alerts — combining embedded sensing with an interface layer for live monitoring.</p>
+          <div class="tag-row"><span class="tag">IoT</span><span class="tag">Prototype</span><span class="tag">Safety Tech</span></div>
+          <div class="view-link">View case study <span>→</span></div>
+        </div>
+        <div class="project-visual" data-tilt style="--bar-color:var(--design);">
+          <div class="glow" style="background:var(--design);"></div>
+          <div class="chrome"><i></i><i></i><i></i></div>
+          <div class="plot">
+            <b style="height:50%;"></b><b style="height:85%;"></b><b style="height:40%;"></b><b style="height:70%;"></b><b style="height:55%;"></b><b style="height:25%;"></b>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="project-ai-chatbot.html">
+        <div class="project-index">04</div>
+        <div class="project-main">
+          <h3>AI Academic Chatbot<span class="tag" style="border-color:var(--dev);color:var(--dev);">AI</span></h3>
+          <p>A conversational assistant built to answer academic queries for students, exploring retrieval-based response design and everyday classroom use cases.</p>
+          <div class="tag-row"><span class="tag">AI / NLP</span><span class="tag">RAG</span><span class="tag">Education</span></div>
+          <div class="view-link">View case study <span>→</span></div>
+        </div>
+        <div class="project-visual" data-tilt style="--bar-color:var(--dev);">
+          <div class="glow" style="background:var(--dev);"></div>
+          <div class="chrome"><i></i><i></i><i></i></div>
+          <div class="plot">
+            <b style="height:65%;"></b><b style="height:45%;"></b><b style="height:90%;"></b><b style="height:30%;"></b><b style="height:75%;"></b><b style="height:55%;"></b>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="project-social-analytics.html">
+        <div class="project-index">05</div>
+        <div class="project-main">
+          <h3>Social Intern — Data Analysis<span class="tag" style="border-color:var(--product);color:var(--product);">Analytics</span></h3>
+          <p>Performance analysis of social content during an internship, translating raw engagement data into recommendations that shaped posting strategy.</p>
+          <div class="tag-row"><span class="tag">Analytics</span><span class="tag">Strategy</span><span class="tag">Reporting</span></div>
+          <div class="view-link">View case study <span>→</span></div>
+        </div>
+        <div class="project-visual" data-tilt style="--bar-color:var(--product);">
+          <div class="glow" style="background:var(--product);"></div>
+          <div class="chrome"><i></i><i></i><i></i></div>
+          <div class="plot">
+            <b style="height:35%;"></b><b style="height:60%;"></b><b style="height:50%;"></b><b style="height:80%;"></b><b style="height:40%;"></b><b style="height:70%;"></b>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">03 <span>/</span> Skills</div>
+        <h2 class="section-title">Three orbits,<br>one toolkit</h2>
+      </div>
+      <p class="section-note">Mapped to the same three disciplines orbiting above — code, interface, and the product decisions that connect them.</p>
+    </div>
+
+    <div class="skills-grid reveal">
+      <div class="skill-col">
+        <div class="skill-col-head"><span class="dot dot--dev"></span><h4>Development</h4></div>
+        <div class="skill-item">React & Vite<span class="level">CORE</span></div>
+        <div class="skill-item">JavaScript (ES6+)<span class="level">CORE</span></div>
+        <div class="skill-item">CSS Grid & Flexbox<span class="level">CORE</span></div>
+        <div class="skill-item">DOM / BOM & Async JS<span class="level">STRONG</span></div>
+        <div class="skill-item">Git & GitHub<span class="level">STRONG</span></div>
+        <div class="skill-item">REST APIs<span class="level">GROWING</span></div>
+      </div>
+      <div class="skill-col">
+        <div class="skill-col-head"><span class="dot dot--design"></span><h4>Design</h4></div>
+        <div class="skill-item">UI/UX Wireframing<span class="level">CORE</span></div>
+        <div class="skill-item">User Flow Mapping<span class="level">CORE</span></div>
+        <div class="skill-item">Design Systems<span class="level">STRONG</span></div>
+        <div class="skill-item">Interaction Design<span class="level">STRONG</span></div>
+        <div class="skill-item">Prototyping<span class="level">STRONG</span></div>
+        <div class="skill-item">Visual Hierarchy<span class="level">GROWING</span></div>
+      </div>
+      <div class="skill-col">
+        <div class="skill-col-head"><span class="dot dot--product"></span><h4>Product</h4></div>
+        <div class="skill-item">PRDs & Specs<span class="level">CORE</span></div>
+        <div class="skill-item">Roadmapping<span class="level">STRONG</span></div>
+        <div class="skill-item">Data-Informed Decisions<span class="level">STRONG</span></div>
+        <div class="skill-item">Automation Design<span class="level">STRONG</span></div>
+        <div class="skill-item">Agentic AI Concepts<span class="level">GROWING</span></div>
+        <div class="skill-item">Stakeholder Comms<span class="level">GROWING</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">04 <span>/</span> Certifications</div>
+        <h2 class="section-title">Proof of work</h2>
+      </div>
+      <p class="section-note">Swap these placeholders for your real certificates and issue dates.</p>
+    </div>
+
+    <div class="cert-grid reveal">
+      <div class="cert-card">
+        <div>
+          <h4>Certification Title</h4>
+          <p>ISSUER NAME · 2025</p>
+        </div>
+        <div class="cert-badge">01</div>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h4>Certification Title</h4>
+          <p>ISSUER NAME · 2025</p>
+        </div>
+        <div class="cert-badge">02</div>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h4>Certification Title</h4>
+          <p>ISSUER NAME · 2024</p>
+        </div>
+        <div class="cert-badge">03</div>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h4>Certification Title</h4>
+          <p>ISSUER NAME · 2024</p>
+        </div>
+        <div class="cert-badge">04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="reveal">
+        <div class="eyebrow" style="margin-bottom:14px;">05 <span>/</span> Contact</div>
+        <h2 class="contact-title">Let's build<br>something<span>.</span></h2>
+        <p class="contact-desc">Open to frontend developer and product management internships. If a role needs someone who can move between code and spec, I'd like to hear about it.</p>
+        <div class="contact-links">
+          <a href="mailto:hello@rudra.dev">Email <span>→</span></a>
+          <a href="#">LinkedIn <span>→</span></a>
+          <a href="#">GitHub <span>→</span></a>
+          <a href="#">Resume (PDF) <span>→</span></a>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-row">
+          <label>Message</label>
+          <textarea placeholder="Tell me about the role or project..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 RUDRA — BUILT WITH HTML, CSS & JS</span>
+    <span>FRONTEND · UI/UX · PRODUCT</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
