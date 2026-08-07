@@ -118,6 +118,35 @@
 })();
 
 /* ============================================================
+   MOBILE NAV
+============================================================ */
+(function(){
+  const toggle = document.getElementById('navToggle');
+  const links = document.querySelector('.nav-links');
+  if(!toggle || !links) return;
+
+  function closeMenu(){
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', ()=>{
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 720) closeMenu();
+  });
+})();
+
+/* ============================================================
    SCROLL REVEAL
 ============================================================ */
 (function(){

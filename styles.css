@@ -305,7 +305,7 @@ nav{
 }
 
 .hero-bar{
-  margin-top:44px;
+  margin:44px auto 0;
   display:flex;
   align-items:center;
   gap:0;
@@ -1034,19 +1034,76 @@ footer{
   .shard{display:none;}
 }
 @media (max-width:720px){
-  .nav-links{display:none;}
   .wrap{padding:0 22px;}
   section{padding:90px 0;}
   .intro-stats{grid-template-columns:1fr;gap:18px;}
   .hero{padding-top:90px;}
   .orbit-field{width:104vw;height:104vw;max-width:104vw;}
   .ring--3{opacity:0;}
+  /* the orbit badges travel a radius wider than the hero text stack on
+     small screens, so they cut across the copy and the email bar —
+     the same DEV/DESIGN/PRODUCT labels are already shown in .hero-roles */
+  .orbit-node{display:none;}
   .hero-sub{max-width:300px;font-size:14px;}
   .eyebrow{padding:0 16px;}
   .hero-core .eyebrow{font-size:10px;padding:0 20px;}
   .hero-bar{max-width:340px;}
   .hero-bar input{font-size:12px;padding:10px 12px;}
   .hero-bar button{padding:10px 16px;font-size:12px;}
+
+  /* ---------- mobile nav ---------- */
+  .nav-toggle{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:36px;height:36px;
+    background:transparent;
+    border:1px solid var(--line-strong);
+    border-radius:8px;
+    flex-shrink:0;
+    z-index:60;
+    position:relative;
+  }
+  .nav-toggle span{
+    display:block;
+    width:15px;height:1.5px;
+    background:var(--paper);
+    transition:transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  .nav-links{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    position:fixed;
+    top:0;left:0;right:0;
+    padding:88px 22px 26px;
+    background:var(--void-2);
+    border-bottom:1px solid var(--line-strong);
+    transform:translateY(-100%);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .4s var(--ease), opacity .3s var(--ease);
+    z-index:45;
+  }
+  .nav-links.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-links li{border-top:1px solid var(--line);}
+  .nav-links li:first-child{border-top:none;}
+  .nav-links a{
+    display:block;
+    padding:16px 2px;
+    font-size:15px;
+  }
+  .nav-cta{padding:9px 14px;font-size:11px;}
 }
 
 @media (prefers-reduced-motion: reduce){
