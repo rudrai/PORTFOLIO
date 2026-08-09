@@ -55,9 +55,11 @@
       </div>
       <p class="hero-sub">Building interfaces that think like products, shipping code, shaping flows, and writing the spec in between.</p>
       <form class="hero-bar" id="heroForm">
-        <input type="email" placeholder="Hiring for PM or frontend? Drop your email" required>
+        <input type="email" name="email" placeholder="Hiring for PM or frontend? Drop your email" required>
+        <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit">Send</button>
       </form>
+      <p class="form-status" id="heroFormStatus" aria-live="polite"></p>
     </div>
   </div>
 
@@ -329,17 +331,19 @@
       <form class="contact-form reveal" id="contactForm">
         <div class="form-row">
           <label>Name</label>
-          <input type="text" placeholder="Your name" required>
+          <input type="text" name="name" placeholder="Your name" required>
         </div>
         <div class="form-row">
           <label>Email</label>
-          <input type="email" placeholder="you@company.com" required>
+          <input type="email" name="email" placeholder="you@company.com" required>
         </div>
         <div class="form-row">
           <label>Message</label>
-          <textarea placeholder="Tell me about the role or project..." required></textarea>
+          <textarea name="message" placeholder="Tell me about the role or project..." required></textarea>
         </div>
+        <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="form-submit">Send message</button>
+        <p class="form-status" id="contactFormStatus" aria-live="polite"></p>
       </form>
     </div>
   </div>

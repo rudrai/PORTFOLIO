@@ -163,25 +163,108 @@
 })();
 
 /* ============================================================
-   FORMS (decorative — replace with real endpoint)
+   FORMS — wired to /api/contact (Vercel serverless function)
 ============================================================ */
+async function submitToContactApi(payload){
+  const res = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  let data = {};
+  try { data = await res.json(); } catch(_) {}
+  if(!res.ok){
+    throw new Error(data.error || 'Something went wrong. Please try again.');
+  }
+  return data;
+}
+
 const heroForm = document.getElementById('heroForm');
 if(heroForm){
-  heroForm.addEventListener('submit', function(e){
+  const heroStatus = document.getElementById('heroFormStatus');
+  const heroBtn = heroForm.querySelector('button');
+  const heroOriginalLabel = heroBtn.textContent;
+  let heroRevertTimer = null;
+
+  heroForm.addEventListener('submit', async function(e){
     e.preventDefault();
-    const btn = this.querySelector('button');
-    const original = btn.textContent;
-    btn.textContent = 'Sent ✓';
-    setTimeout(()=>{ btn.textContent = original; this.reset(); }, 1800);
+    const btn = heroBtn;
+    const emailInput = this.querySelector('input[name="email"]');
+    const companyInput = this.querySelector('input[name="company"]');
+
+    clearTimeout(heroRevertTimer);
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if(heroStatus){ heroStatus.textContent = ''; heroStatus.removeAttribute('data-state'); }
+
+    try{
+      await submitToContactApi({
+        type: 'lead',
+        email: emailInput.value,
+        company: companyInput ? companyInput.value : ''
+      });
+      btn.textContent = 'Sent ✓';
+      if(heroStatus){
+        heroStatus.textContent = 'Thanks — I\'ll get back to you soon.';
+        heroStatus.setAttribute('data-state', 'ok');
+      }
+      this.reset();
+      heroRevertTimer = setTimeout(()=>{ btn.textContent = heroOriginalLabel; }, 2400);
+    }catch(err){
+      btn.textContent = heroOriginalLabel;
+      if(heroStatus){
+        heroStatus.textContent = err.message || 'Could not send right now — try again in a bit.';
+        heroStatus.setAttribute('data-state', 'error');
+      }
+    }finally{
+      btn.disabled = false;
+    }
   });
 }
+
 const contactForm = document.getElementById('contactForm');
 if(contactForm){
-  contactForm.addEventListener('submit', function(e){
+  const contactStatus = document.getElementById('contactFormStatus');
+  const contactBtn = contactForm.querySelector('.form-submit');
+  const contactOriginalLabel = contactBtn.textContent;
+  let contactRevertTimer = null;
+
+  contactForm.addEventListener('submit', async function(e){
     e.preventDefault();
-    const btn = this.querySelector('.form-submit');
-    const original = btn.textContent;
-    btn.textContent = 'Message sent ✓';
-    setTimeout(()=>{ btn.textContent = original; this.reset(); }, 1800);
+    const btn = contactBtn;
+    const nameInput = this.querySelector('input[name="name"]');
+    const emailInput = this.querySelector('input[name="email"]');
+    const messageInput = this.querySelector('textarea[name="message"]');
+    const companyInput = this.querySelector('input[name="company"]');
+
+    clearTimeout(contactRevertTimer);
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if(contactStatus){ contactStatus.textContent = ''; contactStatus.removeAttribute('data-state'); }
+
+    try{
+      await submitToContactApi({
+        type: 'message',
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+        company: companyInput ? companyInput.value : ''
+      });
+      btn.textContent = 'Message sent ✓';
+      if(contactStatus){
+        contactStatus.textContent = 'Got it — thanks for reaching out. I\'ll reply by email soon.';
+        contactStatus.setAttribute('data-state', 'ok');
+      }
+      this.reset();
+      contactRevertTimer = setTimeout(()=>{ btn.textContent = contactOriginalLabel; }, 2400);
+    }catch(err){
+      btn.textContent = contactOriginalLabel;
+      if(contactStatus){
+        contactStatus.textContent = err.message || 'Could not send right now — try again in a bit.';
+        contactStatus.setAttribute('data-state', 'error');
+      }
+    }finally{
+      btn.disabled = false;
+    }
   });
 }
