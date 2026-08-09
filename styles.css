@@ -464,9 +464,19 @@ section{
   color:transparent;
   -webkit-text-stroke:1px var(--line-strong);
 }
+.intro-portrait-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  z-index:2;
+}
 .intro-portrait-tag{
   position:absolute;
   top:22px;left:22px;
+  z-index:3;
   font-family:var(--mono);
   font-size:11px;
   letter-spacing:0.1em;
@@ -589,6 +599,7 @@ section{
   border-radius:50%;
   filter:blur(50px);
   opacity:0.25;
+  z-index:0;
 }
 .project-visual .chrome{
   position:absolute;
@@ -600,6 +611,7 @@ section{
   align-items:center;
   gap:5px;
   padding:0 10px;
+  z-index:2;
 }
 .chrome i{width:6px;height:6px;border-radius:50%;background:var(--line-strong);}
 .project-visual .plot{
@@ -608,12 +620,24 @@ section{
   display:flex;
   align-items:flex-end;
   gap:6px;
+  z-index:0;
 }
 .plot b{
   flex:1;
   background:linear-gradient(to top, var(--bar-color, var(--beacon)), transparent);
   border-radius:3px 3px 0 0;
   opacity:0.85;
+}
+/* real screenshot/photo, layered above the glow + fallback bar-chart,
+   below the fake browser chrome bar — swap the <img src> per project */
+.card-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  z-index:1;
 }
 
 /* ============================================================
@@ -895,6 +919,7 @@ footer{
   top:0;right:-10%;
   filter:blur(70px);
   opacity:0.28;
+  z-index:0;
 }
 .detail-banner .chrome{
   position:absolute;
@@ -906,6 +931,7 @@ footer{
   align-items:center;
   gap:6px;
   padding:0 16px;
+  z-index:2;
 }
 .detail-banner .chrome i{width:8px;height:8px;border-radius:50%;background:var(--line-strong);}
 .detail-banner .plot{
@@ -914,6 +940,7 @@ footer{
   display:flex;
   align-items:flex-end;
   gap:10px;
+  z-index:0;
 }
 .detail-banner .plot b{
   flex:1;
