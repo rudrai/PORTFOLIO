@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Rudra's Portfolio Website",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "dev": "npx http-server -p 3000"
+  },
+  "keywords": ["portfolio", "static-site"],
+  "author": "Rudra",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  }
+}
