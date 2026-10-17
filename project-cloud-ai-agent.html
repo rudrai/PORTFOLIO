@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Academic Chatbot — Rudra</title>
+<title>Cloud AI Coding Agent — Rudra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,30 +23,26 @@
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="index.html#contact" class="nav-cta">Say hello <span>→</span></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <section class="detail-hero">
   <div class="wrap">
     <a href="index.html#projects" class="back-link">← Back to all projects</a>
-    <div class="eyebrow">Project 04 / 05 <span>·</span> AI / NLP</div>
-    <h1 class="detail-title" style="margin-top:18px;">AI Academic Chatbot</h1>
-    <p class="detail-tagline">A conversational assistant built to answer academic queries for students, exploring retrieval-based response design for everyday classroom use.</p>
+    <div class="eyebrow">Project 04 / 05 <span>·</span> Agentic AI</div>
+    <h1 class="detail-title" style="margin-top:18px;">Cloud AI Coding Agent</h1>
+    <p class="detail-tagline">An autonomous coding agent, inspired by Devin, that takes a task, writes the code, and runs it inside an isolated cloud sandbox.</p>
 
     <div class="meta-row">
-      <div class="meta-item"><div class="label">Role</div><div class="value">Builder</div></div>
+      <div class="meta-item"><div class="label">Role</div><div class="value">Solo builder</div></div>
       <div class="meta-item"><div class="label">Type</div><div class="value">Prototype</div></div>
-      <div class="meta-item"><div class="label">Stack</div><div class="value">AI / NLP, RAG patterns</div></div>
+      <div class="meta-item"><div class="label">Stack</div><div class="value">Groq, E2B, React</div></div>
       <div class="meta-item"><div class="label">Status</div><div class="value">Prototype</div></div>
     </div>
 
     <div class="detail-banner" style="--bar-color:var(--dev);">
       <div class="glow" style="background:var(--dev);"></div>
       <div class="chrome"><i></i><i></i><i></i></div>
-      <img class="card-photo" src="images/project-ai-chatbot.jpg" alt="AI Academic Chatbot project screenshot" onerror="this.style.display='none'">
-      <div class="plot"><b style="height:65%;"></b><b style="height:45%;"></b><b style="height:90%;"></b><b style="height:30%;"></b><b style="height:75%;"></b><b style="height:55%;"></b><b style="height:40%;"></b><b style="height:80%;"></b></div>
+      <img src="images/project-cloud-ai-agent.svg" alt="Cloud AI coding agent: task plan beside an isolated sandbox terminal" style="position:absolute;inset:34px 0 0 0;width:100%;height:calc(100% - 34px);object-fit:cover;z-index:1;">
     </div>
   </div>
 </section>
@@ -56,41 +52,42 @@
     <div class="detail-grid">
       <div class="detail-main">
         <h2>Overview</h2>
-        <p>An AI-powered chatbot built to answer academic questions for students — the kind of quick, specific queries that usually mean digging through a textbook, a syllabus, or a forgotten lecture slide. It explores retrieval-based response design so answers stay grounded in real course material instead of generic guesses.</p>
+        <p>The Cloud AI Coding Agent is an autonomous coding assistant inspired by Devin. You give it a task, and it plans the work, writes the code, and runs it in an isolated cloud sandbox, so nothing it generates ever touches your own machine. It is powered by Groq's Llama-3.3-70B-Versatile model for fast responses.</p>
 
         <h2>The problem</h2>
-        <p>Students often need a fast, specific answer to an academic question and don't have an efficient way to find it outside of manually searching notes or waiting on an instructor's reply.</p>
+        <p>AI models can write code quickly, but running unreviewed, AI-generated code on a real machine is risky, and copying output between a chat window and a terminal breaks the flow. A useful coding agent needs somewhere safe to execute what it writes and to check that it works.</p>
 
         <h2>The approach</h2>
-        <p>I built the assistant around a retrieval-first pattern: rather than relying purely on a model's general knowledge, the system pulls relevant academic content first and grounds its responses in that material. This is also the project that kicked off my deeper interest in agentic AI — retrieval loops, tool use, and how these patterns extend into full agent systems.</p>
+        <p>I paired a fast LLM with <strong>E2B sandbox infrastructure</strong>. The model writes the code, E2B runs it in an isolated environment, and the result feeds back into the loop in real time. That gives the agent end-to-end autonomy on a task while keeping execution contained.</p>
 
         <h2>Key features</h2>
         <ul class="feature-list">
-          <li>Conversational interface for academic Q&amp;A</li>
-          <li>Retrieval-based response design grounded in course material</li>
-          <li>Focused on everyday, practical classroom use cases</li>
+          <li>Autonomous execution of coding tasks, from request to running result</li>
+          <li>Isolated E2B sandbox that safely runs and validates AI-generated code</li>
+          <li>Groq-hosted Llama-3.3-70B-Versatile for low-latency responses</li>
+          <li>React frontend, with a streaming UI planned as the next phase</li>
         </ul>
 
         <h2>Outcome</h2>
-        <p>The chatbot works as a functioning prototype and, more importantly, became my entry point into agentic AI concepts — RAG, tool-use loops, and multi-agent patterns — which I've since been studying more formally alongside my frontend and product work.</p>
+        <p>The agent runs tasks end to end inside the sandbox, and it is the project where my interest in agentic AI turned into something I built: tool-use loops, safe code execution, and the product questions around how a person supervises an autonomous system.</p>
       </div>
 
       <aside class="detail-sidebar">
         <div class="sidebar-block">
           <div class="label">Role</div>
-          <div class="value" style="font-size:14px;">Builder</div>
+          <div class="value" style="font-size:14px;">Solo builder</div>
         </div>
         <div class="sidebar-block">
           <div class="label">Tech &amp; tools</div>
-          <div class="sidebar-tags"><span class="tag">AI / NLP</span><span class="tag">RAG</span><span class="tag">Prompt Design</span><span class="tag">Python</span></div>
+          <div class="sidebar-tags"><span class="tag">Groq</span><span class="tag">Llama 3.3 70B</span><span class="tag">E2B Sandbox</span><span class="tag">React</span></div>
         </div>
         <div class="sidebar-block">
           <div class="label">Category</div>
-          <div class="value" style="font-size:14px;">AI / NLP</div>
+          <div class="value" style="font-size:14px;">Agentic AI</div>
         </div>
         <div class="sidebar-block">
           <div class="label">Links</div>
-          <div class="value" style="font-size:14px;"><a href="#" style="color:var(--beacon);">View project notes →</a></div>
+          <div class="value" style="font-size:14px;"><a href="https://github.com/rudrai/CLOUD-AI-AGENT" style="color:var(--beacon);">View on GitHub →</a></div>
         </div>
       </aside>
     </div>

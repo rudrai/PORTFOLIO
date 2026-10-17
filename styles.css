@@ -1165,3 +1165,53 @@ footer{
   text-align:center;
   margin-top:12px;
 }
+
+
+/* ============================================================
+   DESIGN POLISH (additive)
+============================================================ */
+/* scroll progress line */
+.scroll-progress{
+  position:fixed;top:0;left:0;width:100%;height:2px;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--dev),var(--beacon),var(--design));
+  z-index:70;pointer-events:none;
+}
+/* soft cursor light */
+.cursor-glow{
+  position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,184,77,0.09),transparent 62%);
+  pointer-events:none;z-index:1;opacity:0;transition:opacity .5s var(--ease);
+  will-change:transform;
+}
+.cursor-glow.on{opacity:1;}
+/* active nav link */
+.nav-links a.active{color:var(--paper);}
+.nav-links a.active::after{width:100%;}
+/* accent rule under section titles */
+.section-title::after{
+  content:'';display:block;width:0;height:2px;margin-top:18px;
+  background:var(--beacon);transition:width .9s var(--ease) .35s;
+}
+.section-head.in .section-title::after{width:56px;}
+/* project card: highlight follows the cursor */
+.project-visual::after{
+  content:'';position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.11),transparent 60%);
+  opacity:0;transition:opacity .3s var(--ease);
+}
+.project-card:hover .project-visual::after{opacity:1;}
+/* skill level meters */
+.skill-item .level{display:flex;align-items:center;gap:10px;}
+.meter{display:inline-flex;gap:4px;}
+.meter i{width:5px;height:5px;border-radius:50%;background:var(--line-strong);}
+.meter i.on{background:var(--beacon);box-shadow:0 0 6px rgba(255,184,77,0.45);}
+.skill-col:nth-child(1) .meter i.on{background:var(--dev);box-shadow:0 0 6px rgba(94,234,212,0.45);}
+.skill-col:nth-child(2) .meter i.on{background:var(--design);box-shadow:0 0 6px rgba(251,113,133,0.45);}
+.skill-col:nth-child(3) .meter i.on{background:var(--product);box-shadow:0 0 6px rgba(251,191,36,0.45);}
+/* footer back-to-top */
+.to-top{transition:color .3s var(--ease);}
+.to-top:hover{color:var(--beacon);}
+@media (hover:none){.cursor-glow{display:none;}}
+@media (prefers-reduced-motion:reduce){.cursor-glow{display:none;}.scroll-progress{transition:none;}}

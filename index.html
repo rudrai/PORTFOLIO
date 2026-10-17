@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 <canvas id="starfield"></canvas>
 
 <nav>
@@ -102,7 +104,7 @@
         <p>Most recently I've been going deep on <strong>agentic AI</strong> — RAG, tool-use loops, multi-agent systems with an eye toward where product management, design systems, and AI-native interfaces are heading next.</p>
         <div class="intro-stats">
           <div>
-            <div class="stat-num">4+</div>
+            <div class="stat-num" data-count="4" data-suffix="+">4+</div>
             <div class="stat-label">Shipped Projects</div>
           </div>
           <div>
@@ -110,7 +112,7 @@
             <div class="stat-label">Cypherthon Win</div>
           </div>
           <div>
-            <div class="stat-num">2026</div>
+            <div class="stat-num" data-count="2026">2026</div>
             <div class="stat-label">Graduating</div>
           </div>
         </div>
@@ -186,18 +188,18 @@
         </div>
       </a>
 
-      <a class="project-card reveal" href="project-ai-chatbot.html">
+      <a class="project-card reveal" href="project-cloud-ai-agent.html">
         <div class="project-index">04</div>
         <div class="project-main">
-          <h3>AI Academic Chatbot<span class="tag" style="border-color:var(--dev);color:var(--dev);">AI</span></h3>
-          <p>A conversational assistant built to answer academic queries for students, exploring retrieval-based response design and everyday classroom use cases.</p>
-          <div class="tag-row"><span class="tag">AI / NLP</span><span class="tag">RAG</span><span class="tag">Education</span></div>
+          <h3>Cloud AI Coding Agent<span class="tag" style="border-color:var(--dev);color:var(--dev);">AI</span></h3>
+          <p>An autonomous coding agent, inspired by Devin, that plans a task, writes the code, and runs it in an isolated E2B sandbox, powered by Groq's Llama 3.3 70B.</p>
+          <div class="tag-row"><span class="tag">Agentic AI</span><span class="tag">Groq</span><span class="tag">E2B Sandbox</span></div>
           <div class="view-link">View case study <span>→</span></div>
         </div>
         <div class="project-visual" data-tilt style="--bar-color:var(--dev);">
           <div class="glow" style="background:var(--dev);"></div>
           <div class="chrome"><i></i><i></i><i></i></div>
-          <img class="card-photo" src="images/project-ai-chatbot.jpg" alt="AI Academic Chatbot project screenshot" onerror="this.style.display='none'">
+          <img class="card-photo" src="images/project-cloud-ai-agent.svg" alt="Cloud AI coding agent task plan and sandbox terminal" onerror="this.style.display='none'">
           <div class="plot">
             <b style="height:65%;"></b><b style="height:45%;"></b><b style="height:90%;"></b><b style="height:30%;"></b><b style="height:75%;"></b><b style="height:55%;"></b>
           </div>
@@ -352,6 +354,7 @@
 <footer>
   <div class="wrap footer-inner">
     <span>© 2026 RUDRA — BUILT WITH HTML, CSS & JS</span>
+    <a href="#home" class="to-top">BACK TO TOP ↑</a>
     <span>FRONTEND · UI/UX · PRODUCT</span>
   </div>
 </footer>
